@@ -3,11 +3,10 @@ declare(strict_types=1);
 
 namespace App\Http\Models;
 
-use App\Models\Consumer;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\ProvidesConvenienceMethods;
 use ReflectionObject;
 use ReflectionProperty;
-use UnexpectedValueException;
 
 /**
  * Class Model
@@ -15,6 +14,9 @@ use UnexpectedValueException;
  */
 abstract class Model
 {
+
+    use ProvidesConvenienceMethods;
+
     /**
      * Used to relate properties to other objects
      * @var array
@@ -37,7 +39,6 @@ abstract class Model
      * Create a new instance of model
      * @param  Request     $request 
      * @param  string|null $key 
-     * @return static
      */
     public function __construct(Request $request, string $key = null) {
         $this->request = $request;
@@ -55,6 +56,22 @@ abstract class Model
             } else {
                 $property->setValue($this, $child);
             }
+        }
+    }
+
+    /**
+     * Validate model from request
+     *
+     * @param array $rules
+     * @param array $messages
+     * @param array $customAttributes
+     */
+    public function validate(array $rules, array $messages = [], array $customAttributes = [])
+    {
+        $validator = $this->getValidationFactory()->make($this->request->all(), $rules, $messages, $customAttributes);
+
+        if ($validator->fails()) {
+            $this->throwValidationException($this->request, $validator);
         }
     }
 
