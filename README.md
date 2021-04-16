@@ -1,5 +1,5 @@
 # pixeloven/framework
-[![Build Status](https://dev.azure.com/pixeloven/Framework/_apis/build/status/pixeloven.framework?branchName=master)
+[![Build Status](https://dev.azure.com/pixeloven/Framework/_apis/build/status/pixeloven.framework?branchName=master)]
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://paypal.me/briangebel)
 
 A simple framework to extend Laravel/Lumen
