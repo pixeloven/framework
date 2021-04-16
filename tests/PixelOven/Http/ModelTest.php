@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Http\Models;
+namespace PixelOven\Http;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
-use TestCase;
+// use Laravel\Lumen\Testing\TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class MockParentModel

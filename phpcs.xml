@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="PHPCS Coding Standards for PHPCompatibility">
+    <description>Check the code of the PHPCompatibility standard itself.</description>
+    <config name="installed_paths" value="vendor/phpcompatibility/php-compatibility" />
+
+    <arg value="sp"/>
+    <arg name="extensions" value="php"/>
+    <arg name="colors" />
+
+    <exclude-pattern>*/build/*</exclude-pattern>
+    <file>.</file>
+
+    <!-- PHP cross version compatibility 7.2-->
+    <config name="testVersion" value="7.2-99.0"/>
+
+    <!-- Run against the PHPCompatibility -->
+    <rule ref="PHPCompatibility">
+        <!-- To address at a later point in time. -->
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+    </rule>
+
+    <rule ref="PSR12">
+        <exclude name="PSR1.Methods.CamelCapsMethodName"/>
+    </rule>
+</ruleset>
