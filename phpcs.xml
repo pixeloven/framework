@@ -8,6 +8,7 @@
     <arg name="colors" />
 
     <exclude-pattern>*/build/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
     <file>.</file>
 
     <!-- PHP cross version compatibility 7.2-->

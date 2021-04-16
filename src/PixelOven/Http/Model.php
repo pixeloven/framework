@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PixelOven\Http;
@@ -10,11 +11,10 @@ use ReflectionProperty;
 
 /**
  * Class Model
- * @package App\Http\Models\Model
+ * @package PixelOven\Http\Model
  */
 abstract class Model
 {
-
     use ProvidesConvenienceMethods;
 
     /**
@@ -37,10 +37,11 @@ abstract class Model
 
     /**
      * Create a new instance of model
-     * @param  Request     $request 
-     * @param  string|null $key 
+     * @param  Request     $request
+     * @param  string|null $key
      */
-    public function __construct(Request $request, string $key = null) {
+    public function __construct(Request $request, string $key = null)
+    {
         $this->request = $request;
         $this->key     = $key;
 
@@ -66,7 +67,7 @@ abstract class Model
      * @param array $messages
      * @param array $customAttributes
      */
-    public function validate(array $rules, array $messages = [], array $customAttributes = [])
+    public function validate(array $rules, array $messages = [], array $customAttributes = []): void
     {
         $validator = $this->getValidationFactory()->make($this->request->all(), $rules, $messages, $customAttributes);
 
@@ -79,7 +80,8 @@ abstract class Model
      * Get request object
      * @return Request
      */
-    public function getRequest() : Request {
+    public function getRequest(): Request
+    {
         return $this->request;
     }
 
@@ -88,7 +90,8 @@ abstract class Model
      * @param  string $name
      * @return string|array|null
      */
-    protected function getInput(string $name) {
+    protected function getInput(string $name)
+    {
         if (is_null($this->key)) {
             return $this->request->all()[$name] ?? null;
         }
@@ -100,7 +103,8 @@ abstract class Model
      * @param  string $name
      * @return Model|null
      */
-    protected function getRelation(string $name) {
+    protected function getRelation(string $name)
+    {
         if (isset($this->relations[$name]) && class_exists($this->relations[$name])) {
             $class = $this->relations[$name];
             return new $class($this->request, $name);
