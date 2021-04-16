@@ -6,7 +6,7 @@ namespace PixelOven\Http;
 
 /**
  * Class StubParentModel
- * @package PixelOven\Http\Models
+ * @package PixelOven\Http
  */
 class StubParentModel extends Model
 {
