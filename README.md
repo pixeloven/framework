@@ -1,5 +1,5 @@
 # pixeloven/framework
-A simple frameowork to extend Laravel/Lumen
+A simple framework to extend Laravel/Lumen
 
 ## Setup
 The quickest way to get setup is to fist ensure you have docker installed. Then proceed to run the following:
