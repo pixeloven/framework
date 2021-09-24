@@ -18,16 +18,28 @@ docker-compose run php-7.4 composer install
 There are two simple steps for verifying your changes.
 
 ### Testing
-This compors alias can be found in the composer.json file under scripts. We utilizes PHPUnit for all testing.
+We utilizes PHPUnit for all testing.
 ```
 docker-compose run php-7.4 composer test
 ```
 
 #### Linting
-This compors alias can be found in the composer.json file under scripts. We utilizes PHPCodesniffer for all liniting needs.
+We utilizes PHPCodesniffer for all liniting needs.
 ```
 docker-compose run php-7.4 composer lint
 ```
+
+#### Formatting
+We utilizes PHPFixer for all formatting needs. This cmd will write changes to disk. 
+```
+docker-compose run php-7.4 composer format
+```
+If you simply want to check for issues without writing to disk run the following cmd.
+```
+docker-compose run php-7.4 composer format:dry-run
+```
+
+> All cmd alias can be found in the composer.json file under scripts. Most of what you see above is run within our build pipeline to ensure quality.
 
 ## Usage
 The Http model is meant to help abstract the request into an input model. The example below shows how it might be used in production. 
