@@ -12,7 +12,8 @@ LABEL Maintainer="Brian Gebel <brian@pixeloven.com>" \
       org.label-schema.schema-version="1.0.0"
 
 RUN apk update \
-    && apk add --no-cache php7-pecl-xdebug \
+    && apk add --no-cache $PHPIZE_DEPS \
+    && pecl install xdebug-3.0.4 \
     && docker-php-ext-enable xdebug \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
