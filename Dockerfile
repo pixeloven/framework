@@ -13,6 +13,7 @@ LABEL Maintainer="Brian Gebel <brian@pixeloven.com>" \
 
 RUN apk update \
     && apk add --no-cache php7-pecl-xdebug \
+    && docker-php-ext-enable xdebug \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
