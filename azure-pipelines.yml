@@ -23,5 +23,8 @@ steps:
 - script: composer format:dry-run
   displayName: 'Format dry run'
 
+- script: composer stan
+  displayName: 'Static Analysis'
+
 - script: composer test
   displayName: 'Test'
