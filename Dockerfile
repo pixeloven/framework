@@ -3,7 +3,7 @@ FROM php:7.4-cli-alpine
 ARG BUILD_DATE
 ARG VCS_REF
 
-LABEL Maintainer="Brian Gebel <brain@pixeloven.com>" \
+LABEL Maintainer="Brian Gebel <brian@pixeloven.com>" \
       Description="Lightweight php 7.4 container based on alpine with xDebug enabled & composer installed." \
       org.label-schema.name="php-7.4-xdebug-alpine" \
       org.label-schema.description="Lightweight php 7.4 container based on alpine with xDebug enabled & composer installed." \
