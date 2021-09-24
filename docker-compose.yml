@@ -1,8 +1,8 @@
 version: '3.4'
 services:
-  php-7.2:
-    container_name: pixeloven-php-7.2
-    image: pixeloven-php-7.2
+  php-7.4:
+    container_name: pixeloven-php-7.4
+    image: pixeloven-php-7.4
     build:
       context: .
       dockerfile: Dockerfile
