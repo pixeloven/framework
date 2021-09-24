@@ -29,6 +29,13 @@ We utilizes PHPCodesniffer for all liniting needs.
 docker-compose run php-7.4 composer lint
 ```
 
+#### Static Analysis
+We utilizes PHPStan for all static analysis needs.
+```
+docker-compose run php-7.4 composer stan
+```
+Currently our configuration is set to level 5 with one ignored error in our baseline. Our goal will be to maintain a strict baseline with as few ignored errors as possible. As our source catches up with PHP 7.4+ features we will tighted our level to address our increasing complexity.
+
 #### Formatting
 We utilizes PHPFixer for all formatting needs. This cmd will write changes to disk. 
 ```
