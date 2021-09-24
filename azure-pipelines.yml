@@ -20,5 +20,8 @@ steps:
 - script: composer lint
   displayName: 'Lint'
 
+- script: composer format:dry-run
+  displayName: 'Format dry run'
+
 - script: composer test
   displayName: 'Test'
