@@ -11,8 +11,8 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <file>.</file>
 
-    <!-- PHP cross version compatibility 7.2-->
-    <config name="testVersion" value="7.2-99.0"/>
+    <!-- PHP cross version compatibility 7.4-->
+    <config name="testVersion" value="7.4-99.0"/>
 
     <!-- Run against the PHPCompatibility -->
     <rule ref="PHPCompatibility">

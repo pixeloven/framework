@@ -10,7 +10,6 @@ namespace PixelOven\Http;
  */
 class StubParentModel extends Model
 {
-
     protected $relations = [
         'child' => StubChildModel::class
     ];
