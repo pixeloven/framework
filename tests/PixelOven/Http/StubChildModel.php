@@ -10,7 +10,6 @@ namespace PixelOven\Http;
  */
 class StubChildModel extends Model
 {
-
     /**
      * Childs test property
      * @var string

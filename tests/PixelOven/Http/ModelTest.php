@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class ModelTest extends TestCase
 {
-
     protected $testPropertyValue = 'testing';
 
     /**
